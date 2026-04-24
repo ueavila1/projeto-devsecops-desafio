@@ -1,5 +1,7 @@
 # Desafio DevSecOps — Gerenciador de Tarefas
 
+https://github.com/ueavila1/projeto-devsecops-desafio
+
 ## Sobre o Projeto
 Este repositório faz parte do desafio prático do módulo de DevSecOps da ADA Tech.
 Você receberá este projeto com vulnerabilidades propositais e uma pipeline incompleta.
@@ -22,7 +24,7 @@ A pipeline está **incompleta**. Os steps de segurança precisam ser implementad
 - [ ] Deploy com **GitHub Pages**
 
 ## Como a pipeline funciona
-> **Substitua este bloco pela sua explicação após implementar a pipeline.**
+> 
 > Descreva cada step, o que ele faz e por que ele é importante para a segurança.
 
 ## URL de Produção
