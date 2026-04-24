@@ -1,7 +1,6 @@
 const API_KEY = VALOR_API;
 const DB_PASSWORD = SENHA_BANCO_DE_DADOS;
 
-// Busca tarefas do "banco de dados"
 fetch('db.json')
     .then(response => response.json())
     .then(data => {
@@ -10,23 +9,30 @@ fetch('db.json')
         const list = document.getElementById('task-list');
         data.itens.forEach(item => {
             let li = document.createElement('li');
+            // CORREÇÃO 3: innerText em vez de innerHTML (evita XSS)
             li.innerText = item.task;
             list.appendChild(li);
         });
     })
-    .catch(err => {        
+    .catch(() => {
+        // CORREÇÃO 2: Mensagem genérica sem expor detalhes internos
         document.getElementById('db-status').innerText =
-            'Erro interno: ' + err.stack;
+            '❌ Erro ao conectar. Tente novamente.';
     });
 
-// Adiciona nova tarefa na tela
 function addTask() {
     const input = document.getElementById('new-task');
-    const output = document.getElementById('output');
+    const list = document.getElementById('task-list');
 
-    output.innerHTML = '<li>' + input.value + '</li>';
+    if (!input.value.trim()) return;
 
-    eval('console.log("Tarefa adicionada: ' + input.value + '")');
+    // CORREÇÃO 3: Usando createElement + innerText (sem innerHTML, sem XSS)
+    const li = document.createElement('li');
+    li.innerText = input.value;
+    list.appendChild(li);
+
+    // CORREÇÃO 4: eval() removido completamente
+    console.log('Tarefa adicionada.');
 
     input.value = '';
 }
