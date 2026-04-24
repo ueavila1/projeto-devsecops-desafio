@@ -26,4 +26,4 @@ A pipeline está **incompleta**. Os steps de segurança precisam ser implementad
 > Descreva cada step, o que ele faz e por que ele é importante para a segurança.
 
 ## URL de Produção
-> Adicione aqui o link do GitHub Pages após o deploy.
+> https://ueavila1.github.io/projeto-devsecops-desafio/
